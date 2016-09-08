@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
+    format="7"
+    timestamp="262248558568724"
+    token="-6063336302908317763"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="96" />
+    <task
+        name="instant-run-dex"
+        duration="639" />
+    <task
+        name="instant-run-transform"
+        duration="15" />
+    <task
+        name="verifier"
+        duration="2" />
+
+    <artifact
+        location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
+
+    <build timestamp="260667295746747" >
+        <artifact
+            location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build timestamp="262225749974587" >
+        <artifact
+            location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="262248558568724"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>
