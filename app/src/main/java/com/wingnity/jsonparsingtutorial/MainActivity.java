@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
         View decorView = getWindow().getDecorView();
 
+        //git prob
         // Hiding the Status Bar
             int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
              decorView.setSystemUiVisibility(uiOptions);
