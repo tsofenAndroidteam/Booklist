@@ -4,40 +4,40 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="271267847182674"
+    timestamp="272766116056888"
     token="-6063336302908317763" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="262" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="50" />
     <task
         name="verifier"
-        duration="0" />
+        duration="11" />
 
     <artifact
-        location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/intermediates/res/resources-debug.ap_"
-        type="RESOURCES" />
+        location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+        type="DEX" />
 
     <build timestamp="269388048154907" >
         <artifact
             location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="270911369737437" >
-        <artifact
-            location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-            type="DEX" />
-    </build>
     <build timestamp="271267847182674" >
         <artifact
             location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/intermediates/res/resources-debug.ap_"
             type="RESOURCES" />
+    </build>
+    <build timestamp="272766116056888" >
+        <artifact
+            location="/Users/michaelg/Desktop/Android_Team/Udacity/JSONParsingTutorial/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>
