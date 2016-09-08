@@ -13,10 +13,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.net.ParseException;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,13 +33,24 @@ public class MainActivity extends Activity {
 	
 	bookAdapter adapter;
 
-	@Override
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+        View decorView = getWindow().getDecorView();
+
+        // Hiding the Status Bar
+            int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+             decorView.setSystemUiVisibility(uiOptions);
+             // Remember that you should never show the action bar if the
+             // status bar is hidden, so hide that too if necessary.
+             ActionBar actionBar = getActionBar();
+		     actionBar.hide();
+        //Hiding the Status Bar
+        setContentView(R.layout.activity_main);
 		bookList = new ArrayList<Book>();
-        new JSONAsyncTask().execute("http://ec2-52-43-108-148.us-west-2.compute.amazonaws.com:8080/useraccount/search/dosearchbytitle?userid=123123&title=me&fromyear=1960&toyear=1970");
-		//new JSONAsyncTask().execute("http://52.29.110.203:8080/LibArab/search/booktitle?userId=23&title=any");
+        //new JSONAsyncTask().execute("http://ec2-52-43-108-148.us-west-2.compute.amazonaws.com:8080/useraccount/search/dosearchbytitle?userid=123123&title=me&fromyear=1960&toyear=1970");
+		new JSONAsyncTask().execute("http://52.29.110.203:8080/LibArab/search/booktitle?userId=23&title=any");
 		  //http://ec2-52-43-108-148.us-west-2.compute.amazonaws.com:8080/useraccount/search/dosearchbytitle?userid=123123&title=me&fromyear=1960&toyear=1970
 		ListView listview = (ListView)findViewById(R.id.list);
 		adapter = new bookAdapter(getApplicationContext(), R.layout.row, bookList);
@@ -84,28 +98,20 @@ public class MainActivity extends Activity {
 				if (status == 200) {
 					HttpEntity entity = response.getEntity();
 					String data = EntityUtils.toString(entity);
-					
-				
+
 					JSONObject jsono = new JSONObject(data);
-					JSONArray jarray = jsono.getJSONArray("list");
+					JSONArray jarray = jsono.getJSONArray("docs");
 					
-					for (int i = 0; i < jarray.length(); i++) {
+					for (int i = 0; i < jarray.length(); i++)
+                    {
 						JSONObject object = jarray.getJSONObject(i);
-					
 						Book currentbook = new Book();
-
 						currentbook.setRecordid(object.getString("recordId"));
-
 						currentbook.setTitle(object.getString("title"));
-					//	currentbook.setDescription(object.getString("description"));
 						currentbook.setCreationdate(object.getString("creationdate"));
 						currentbook.setPublisher(object.getString("publisher"));
 						currentbook.setAuthor(object.getString("author"));
-						//currentbook.setSpouse(object.getString("spouse"));
-					//	currentbook.setChildren(object.getString("children"));
-						//currentbook.setImage(object.getString("image"));
-
-						bookList.add(currentbook);
+                        bookList.add(currentbook);
 					}
 					return true;
 				}

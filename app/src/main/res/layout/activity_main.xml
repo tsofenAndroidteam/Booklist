@@ -6,10 +6,26 @@
     android:orientation="vertical"    android:background="#F1F1F1"
     tools:context=".MainActivity" >
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@android:color/holo_orange_light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search Results:"
+            android:layout_gravity="left|center_vertical"
+            android:id="@+id/tv_title"
+            android:textColor="#ffffff"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textStyle="bold" />
+    </FrameLayout>
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:listitem="@layout/row" >
 
     </ListView>

@@ -8,14 +8,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:weightSum="1">
 
         <ImageView
             android:id="@+id/ivImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
             android:layout_margin="8dp"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/book_flat"
+            android:layout_weight="0.09" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -27,30 +29,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Book Title"
-                android:textColor="#166CED"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:textColor="#003c50"
+                android:textAppearance="@android:style/TextAppearance.Small" />
 
             <TextView
                 android:id="@+id/tv_creationdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#D64530"
+                android:textColor="@android:color/tertiary_text_light"
                 android:text="Creation Date: July 3, 1962" />
 
             <TextView
                 android:id="@+id/tv_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Michael Jackson"
-                android:textColor="#D64530"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:text="Author: Michael Jackson"
+                android:textColor="@android:color/tertiary_text_light"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:singleLine="false" />
 
             <TextView
                 android:id="@+id/tv_publisher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#D64530"
-                android:text="The National Libary" />
+                android:textColor="@android:color/tertiary_text_light"
+                android:text="Publisher: The National Libary" />
 
         </LinearLayout>
 
